@@ -10,11 +10,11 @@ body {
 }
 
 /* ========================= */
-/* ROSE SUI MARGINI (sfondo) */
+/* ROSE SUI MARGINI DELLO SFONDO */
 .rose-bg {
     position: fixed;
-    width: 60px;
-    height: 60px;
+    width: 200px;
+    height: 200px;
     background-size: cover;
     background-repeat: no-repeat;
     z-index: 0;
