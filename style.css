@@ -1,34 +1,46 @@
+/* ========================= */
 /* FONT BASE */
 body {
     margin: 0;
     font-family: 'Playfair Display', serif;
-    background: linear-gradient(180deg, #e6d8c8, #e6d8c8);
+    background: linear-gradient(180deg, #f5efe7, #e6d8c8);
     color: #5a4232;
-}
-
-/* CENTRATURA */
-.center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-/* TESTO SOPRA BUSTA */
-.apri-text {
-    margin-bottom: 25px;
-    color: #7a5c46;
-}
-
-/* CONTENITORE */
-.invito, .card {
-    text-align: center;
     position: relative;
-    z-index: 1; /* contenuti sopra le rose */
+    min-height: 100vh;
 }
 
 /* ========================= */
-/* ✉️ BUSTA */
+/* ROSE SUI MARGINI (sfondo) */
+.rose-bg {
+    position: fixed;
+    width: 80px;
+    height: 80px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 0;
+}
+
+.rose-top-left { top: 0; left: 0; }
+.rose-top-right { top: 0; right: 0; }
+.rose-bottom-left { bottom: 0; left: 0; }
+.rose-bottom-right { bottom: 0; right: 0; }
+
+/* ========================= */
+/* CENTRATURA GENERALE */
+.card, .invito {
+    position: relative;
+    z-index: 1; /* sopra le rose */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    padding: 20px;
+}
+
+/* ========================= */
+/* BUSTA (index.html) */
 .busta {
     position: relative;
     width: 280px;
@@ -84,27 +96,14 @@ body {
     transition: 0.5s;
 }
 
-/* ANIMAZIONE APERTURA */
-.busta.open .flap {
-    transform: rotateX(180deg);
-}
+.busta.open .flap { transform: rotateX(180deg); }
+.busta.open .lettera { transform: translateY(-100px) scale(1.02); }
+.busta.open .sigillo { opacity: 0; }
 
-.busta.open .lettera {
-    transform: translateY(-100px) scale(1.02);
-}
-
-.busta.open .sigillo {
-    opacity: 0;
-}
+.apri-text { margin-bottom: 25px; color: #7a5c46; }
 
 /* ========================= */
-/* HOME / CARD STYLE */
-.card {
-    text-align: center;
-    padding: 40px 20px;
-}
-
-/* NUMERO 18 */
+/* HOME / LUOGO / CONFERMA / DRESSCODE */
 .numero {
     font-size: 85px;
     margin: 0;
@@ -112,32 +111,22 @@ body {
     text-shadow: 0 1px 0 #fff, 0 2px 4px rgba(0,0,0,0.15);
 }
 
-/* NOME */
 .nome {
     font-family: 'Great Vibes', cursive;
     font-size: 48px;
     margin: 10px 0;
 }
 
-/* TESTI */
-.info {
-    margin-bottom: 30px;
-    font-size: 16px;
-    color: #6b4f3a;
-}
+.info { margin-bottom: 30px; font-size: 16px; color: #6b4f3a; }
+.grande { font-size: 20px; }
 
-.grande {
-    font-size: 20px;
-}
-
-/* MENU */
 .menu {
     display: flex;
     justify-content: center;
     gap: 20px;
+    flex-wrap: wrap;
 }
 
-/* BOTTONI TONDI */
 .btn-circle {
     width: 100px;
     height: 100px;
@@ -154,11 +143,8 @@ body {
     transition: 0.2s;
 }
 
-.btn-circle:hover {
-    transform: translateY(-3px);
-}
+.btn-circle:hover { transform: translateY(-3px); }
 
-/* BOTTONI NORMALI */
 .btn {
     display: inline-block;
     margin-top: 20px;
@@ -170,224 +156,32 @@ body {
     box-shadow: 0 5px 10px rgba(0,0,0,0.2);
 }
 
-/* TITOLI PAGINE */
-.titolo {
-    font-family: 'Great Vibes', cursive;
-    font-size: 42px;
-    color: #5c4432;
-}
+.titolo { font-family: 'Great Vibes', cursive; font-size: 42px; color: #5c4432; }
 
-/* BACK */
-.back {
-    margin-top: 30px;
-}
-
-.back a {
-    text-decoration: none;
-    color: #5c4432;
-    font-size: 14px;
-}
+.back { margin-top: 30px; }
+.back a { text-decoration: none; color: #5c4432; font-size: 14px; }
 
 /* ========================= */
-/* ROSE SUI MARGINI DELLO SFONDO */
-.rose-bg {
-    position: fixed;
-    width: 200px;
-    height: 200px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    z-index: 0;
-}
-
-.rose-top-left { top: 0; left: 0; }
-.rose-top-right { top: 0; right: 0; }
-.rose-bottom-left { bottom: 0; left: 0; }
-.rose-bottom-right { bottom: 0; right: 0; }
-
-/* ========================= */
-/* ICONE BOTTONI */
-
-/* contenitore */
-.icon {
-    width: 32px;
-    height: 32px;
-    position: relative;
-    margin-bottom: 6px;
-}
-
-/* ========================= */
-/* 📍 POSIZIONE (PIN) */
-.icon-location {
-    width: 22px;
-    height: 22px;
-    border: 2.5px solid #5c4432;
-    border-radius: 50% 50% 50% 0;
-    transform: rotate(-45deg);
-    margin: 0 auto;
-}
-
-.icon-location::after {
-    content: '';
-    position: absolute;
-    width: 6px;
-    height: 6px;
-    background: #5c4432;
-    border-radius: 50%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-/* ========================= */
-/* ✉️ BUSTA CHIUSA */
-.icon-mail {
-    width: 28px;
-    height: 18px;
-    border: 2px solid #5c4432;
-    border-radius: 4px;
-    margin: 0 auto;
-    position: relative;
-}
-
-.icon-mail::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-top: 2px solid #5c4432;
-    top: 0;
-    left: 0;
-    clip-path: polygon(0 0, 50% 60%, 100% 0);
-}
-
-/* ========================= */
-/* 👗 VESTITO ELEGANTE (PIENO E DELICATO) */
-.icon-dress {
-    width: 28px;
-    height: 32px;
-    margin: 0 auto;
-    position: relative;
-}
-
-/* CORPETTO */
-.icon-dress::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 7px;
-    width: 14px;
-    height: 10px;
-    background: #5c4432;
-    clip-path: polygon(
-        0% 0%,
-        20% 100%,
-        80% 100%,
-        100% 0%,
-        70% 0%,
-        50% 40%,
-        30% 0%
-    );
-}
-
-/* GONNA (leggermente distaccata) */
-.icon-dress::after {
-    content: '';
-    position: absolute;
-    top: 13px; /* piccolo stacco */
-    left: 0;
-    width: 28px;
-    height: 19px;
-    background: #5c4432;
-    clip-path: polygon(
-        20% 0%,
-        80% 0%,
-        100% 100%,
-        0% 100%
-    );
-}
-/* ========================= */
-/* STILE MOBILE */
+/* RESPONSIVE MOBILE */
 @media (max-width: 768px) {
+    .rose-bg { width: 60px; height: 60px; }
 
-    /* -------------------- */
-    /* BUSTA (index.html) */
-    .busta {
-        width: 350px;   /* più grande */
-        height: 220px;  /* più alto */
-    }
+    .busta { width: 320px; height: 200px; }
+    .lettera { width: 90%; height: 150px; font-size: 26px; padding-top: 38px; }
+    .sigillo { width: 65px; height: 65px; font-size: 26px; }
+    .apri-text { font-size: 18px; }
 
-    .flap {
-        height: 100%;
-    }
+    .card { padding: 40px 15px; }
+    .numero { font-size: 90px; }
+    .nome { font-size: 48px; }
+    .info { font-size: 16px; }
+    .grande { font-size: 18px; }
+    .titolo { font-size: 40px; }
+    .back a { font-size: 14px; }
 
-    .lettera {
-        width: 90%;
-        height: 160px;
-        font-size: 32px;  /* testo più grande */
-        padding-top: 45px;
-    }
+    .btn-circle { width: 110px; height: 110px; font-size: 15px; }
+    .btn-circle .icon { width: 32px; height: 32px; }
+    .btn { padding: 13px 26px; font-size: 16px; }
 
-    .sigillo {
-        width: 70px;
-        height: 70px;
-        font-size: 30px;
-    }
-
-    .apri-text {
-        font-size: 22px;
-    }
-
-    /* -------------------- */
-    /* HOME / CARD GENERALI */
-    .card {
-        padding: 50px 20px; /* più spazio */
-    }
-
-    .numero {
-        font-size: 110px; /* numero grande */
-    }
-
-    .nome {
-        font-size: 56px;
-    }
-
-    .info {
-        font-size: 18px;
-    }
-
-    .grande {
-        font-size: 22px;
-    }
-
-    /* -------------------- */
-    /* MENU BOTTONI */
-    .menu {
-        flex-direction: column; /* bottoni uno sotto l'altro */
-        gap: 25px;
-        align-items: center;
-    }
-
-    .btn-circle {
-        width: 120px;
-        height: 120px;
-        font-size: 16px;
-    }
-
-    .btn-circle .icon {
-        width: 36px;
-        height: 36px;
-    }
-
-    .btn {
-        padding: 14px 28px;
-        font-size: 18px;
-    }
-
-    .titolo {
-        font-size: 48px;
-    }
-
-    .back a {
-        font-size: 16px;
-    }
+    .menu { flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 18px; }
 }
