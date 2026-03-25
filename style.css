@@ -7,43 +7,37 @@ body {
     color: #5a4232;
     position: relative;
     min-height: 100vh;
-}
-
-/* ========================= */
-/* ROSE SUI MARGINI SUL PIANO DEI CONTENUTI */
-.rose-bg {
-    width: 120px;
-    height: 120px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    margin: 10px;
-}
-
-/* Posizionamento flessibile ai margini */
-.rose-container {
     display: flex;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
-.rose-top-left { order: 1; }
-.rose-top-right { order: 2; }
-.rose-bottom-left { order: 3; }
-.rose-bottom-right { order: 4; }
+/* ========================= */
+/* ROSE SUI MARGINI */
+.rose-bg {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* Posizioni */
+.rose-top-left { top: 0; left: 0; }
+.rose-top-right { top: 0; right: 0; }
+.rose-bottom-left { bottom: 0; left: 0; }
+.rose-bottom-right { bottom: 0; right: 0; }
 
 /* ========================= */
-/* CENTRATURA GENERALE */
+/* CENTRATURA CONTENUTI */
 .card, .invito {
     position: relative;
+    z-index: 1; /* sopra le rose */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    text-align: center;
     padding: 20px;
 }
 
@@ -250,7 +244,7 @@ body {
 /* ========================= */
 /* RESPONSIVE MOBILE */
 @media (max-width: 768px) {
-    .rose-bg { width: 70px; height: 70px; }
+    .rose-bg { width: 80px; height: 80px; }
 
     .busta { width: 280px; height: 180px; }
     .lettera { width: 90%; height: 140px; font-size: 26px; padding-top: 38px; }
