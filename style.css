@@ -305,3 +305,89 @@ body {
         0% 100%
     );
 }
+/* ========================= */
+/* STILE MOBILE */
+@media (max-width: 768px) {
+
+    /* -------------------- */
+    /* BUSTA (index.html) */
+    .busta {
+        width: 350px;   /* più grande */
+        height: 220px;  /* più alto */
+    }
+
+    .flap {
+        height: 100%;
+    }
+
+    .lettera {
+        width: 90%;
+        height: 160px;
+        font-size: 32px;  /* testo più grande */
+        padding-top: 45px;
+    }
+
+    .sigillo {
+        width: 70px;
+        height: 70px;
+        font-size: 30px;
+    }
+
+    .apri-text {
+        font-size: 22px;
+    }
+
+    /* -------------------- */
+    /* HOME / CARD GENERALI */
+    .card {
+        padding: 50px 20px; /* più spazio */
+    }
+
+    .numero {
+        font-size: 110px; /* numero grande */
+    }
+
+    .nome {
+        font-size: 56px;
+    }
+
+    .info {
+        font-size: 18px;
+    }
+
+    .grande {
+        font-size: 22px;
+    }
+
+    /* -------------------- */
+    /* MENU BOTTONI */
+    .menu {
+        flex-direction: column; /* bottoni uno sotto l'altro */
+        gap: 25px;
+        align-items: center;
+    }
+
+    .btn-circle {
+        width: 120px;
+        height: 120px;
+        font-size: 16px;
+    }
+
+    .btn-circle .icon {
+        width: 36px;
+        height: 36px;
+    }
+
+    .btn {
+        padding: 14px 28px;
+        font-size: 18px;
+    }
+
+    .titolo {
+        font-size: 48px;
+    }
+
+    .back a {
+        font-size: 16px;
+    }
+}
