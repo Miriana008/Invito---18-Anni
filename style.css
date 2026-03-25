@@ -10,26 +10,34 @@ body {
 }
 
 /* ========================= */
-/* ROSE SUI MARGINI DELLO SFONDO */
+/* ROSE SUI MARGINI SUL PIANO DEI CONTENUTI */
 .rose-bg {
-    position: absolute;
     width: 120px;
     height: 120px;
     background-size: cover;
     background-repeat: no-repeat;
-    z-index: 0; /* dietro i contenuti */
+    margin: 10px;
 }
 
-.rose-top-left { top: 0; left: 0; }
-.rose-top-right { top: 0; right: 0; }
-.rose-bottom-left { bottom: 0; left: 0; }
-.rose-bottom-right { bottom: 0; right: 0; }
+/* Posizionamento flessibile ai margini */
+.rose-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.rose-top-left { order: 1; }
+.rose-top-right { order: 2; }
+.rose-bottom-left { order: 3; }
+.rose-bottom-right { order: 4; }
 
 /* ========================= */
 /* CENTRATURA GENERALE */
 .card, .invito {
     position: relative;
-    z-index: 1; /* sopra le rose */
     display: flex;
     flex-direction: column;
     justify-content: center;
