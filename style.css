@@ -12,12 +12,12 @@ body {
 /* ========================= */
 /* ROSE SUI MARGINI DELLO SFONDO */
 .rose-bg {
-    position: fixed;
-    width: 200px;
-    height: 200px;
+    position: absolute;
+    width: 120px;
+    height: 120px;
     background-size: cover;
     background-repeat: no-repeat;
-    z-index: 0;
+    z-index: 0; /* dietro i contenuti */
 }
 
 .rose-top-left { top: 0; left: 0; }
@@ -107,7 +107,7 @@ body {
 .numero {
     font-size: 85px;
     margin: 0;
-    color: #5a4232;
+    color: #5c4432;
     text-shadow: 0 1px 0 #fff, 0 2px 4px rgba(0,0,0,0.15);
 }
 
@@ -124,7 +124,6 @@ body {
     display: flex;
     justify-content: center;
     gap: 20px;
-    flex-wrap: wrap;
 }
 
 .btn-circle {
@@ -243,7 +242,7 @@ body {
 /* ========================= */
 /* RESPONSIVE MOBILE */
 @media (max-width: 768px) {
-    .rose-bg { width: 50px; height: 50px; }
+    .rose-bg { width: 70px; height: 70px; }
 
     .busta { width: 280px; height: 180px; }
     .lettera { width: 90%; height: 140px; font-size: 26px; padding-top: 38px; }
